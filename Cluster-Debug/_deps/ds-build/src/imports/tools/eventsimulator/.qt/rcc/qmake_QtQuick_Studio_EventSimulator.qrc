@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/EventSimulator">
+    <file alias="qmldir">/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/qml/QtQuick/Studio/EventSimulator/qmldir</file>
+  </qresource>
+</RCC>
+

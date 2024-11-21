@@ -1,0 +1,12 @@
+-I
+/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/qml
+-I
+/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/qml
+-I
+/home/programming-pc/Qt/6.7.3/gcc_64/qml
+--resource
+/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/Cluster/.qt/rcc/qmake_Cluster.qrc
+--resource
+/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/Cluster/.qt/rcc/Cluster_raw_qml_0.qrc
+--module
+Cluster

@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/qt-project.org/imports/QtQuick/Studio/DesignEffects/">
+    <file alias="DesignBackgroundBlurPrivate.qml">/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/_deps/ds-src/src/imports/designeffects/DesignBackgroundBlurPrivate.qml</file>
+    <file alias="DesignDropShadow.qml">/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/_deps/ds-src/src/imports/designeffects/DesignDropShadow.qml</file>
+    <file alias="DesignDropShadowPrivate.qml">/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/_deps/ds-src/src/imports/designeffects/DesignDropShadowPrivate.qml</file>
+    <file alias="DesignEffect.qml">/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/_deps/ds-src/src/imports/designeffects/DesignEffect.qml</file>
+    <file alias="DesignEffectPrivate.qml">/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/_deps/ds-src/src/imports/designeffects/DesignEffectPrivate.qml</file>
+    <file alias="DesignInnerShadow.qml">/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/_deps/ds-src/src/imports/designeffects/DesignInnerShadow.qml</file>
+    <file alias="DesignInnerShadowPrivate.qml">/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/_deps/ds-src/src/imports/designeffects/DesignInnerShadowPrivate.qml</file>
+    <file alias="DesignLayerBlurPrivate.qml">/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/_deps/ds-src/src/imports/designeffects/DesignLayerBlurPrivate.qml</file>
+  </qresource>
+</RCC>
+

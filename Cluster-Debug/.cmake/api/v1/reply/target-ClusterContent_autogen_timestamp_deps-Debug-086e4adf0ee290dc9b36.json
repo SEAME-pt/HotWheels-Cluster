@@ -1,0 +1,38 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"ClusterContent/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "ClusterContent_tooling::@ca5835ff3eb3ea283de6"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "ClusterContent_autogen_timestamp_deps::@ca5835ff3eb3ea283de6",
+	"isGeneratorProvided" : true,
+	"name" : "ClusterContent_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "ClusterContent",
+		"source" : "ClusterContent"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

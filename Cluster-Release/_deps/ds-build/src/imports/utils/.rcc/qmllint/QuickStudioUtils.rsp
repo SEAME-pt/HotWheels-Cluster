@@ -1,0 +1,14 @@
+--bare
+-I
+/home/programming-pc/seame/cluster_dashboard/Cluster-Release/qml
+-I
+/home/programming-pc/seame/cluster_dashboard/Cluster-Release/qml
+-I
+/home/programming-pc/Qt/6.7.3/gcc_64/qml
+--resource
+/home/programming-pc/seame/cluster_dashboard/Cluster-Release/_deps/ds-build/src/imports/utils/.qt/rcc/qmake_QtQuick_Studio_Utils.qrc
+--resource
+/home/programming-pc/seame/cluster_dashboard/Cluster-Release/_deps/ds-build/src/imports/utils/.qt/rcc/QuickStudioUtils_raw_qml_0.qrc
+/home/programming-pc/seame/cluster_dashboard/Cluster-Release/_deps/ds-src/src/imports/utils/JsonListModel.qml
+/home/programming-pc/seame/cluster_dashboard/Cluster-Release/_deps/ds-src/src/imports/utils/JsonBackend.qml
+/home/programming-pc/seame/cluster_dashboard/Cluster-Release/_deps/ds-src/src/imports/utils/ChildListModel.qml

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "_deps/ds-build/src/imports/multitext",
+		"source" : "/home/programming-pc/seame/cluster_dashboard/Cluster-Release/_deps/ds-src/src/imports/multitext"
+	}
+}

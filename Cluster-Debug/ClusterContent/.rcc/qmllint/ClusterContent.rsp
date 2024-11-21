@@ -1,0 +1,13 @@
+--bare
+-I
+/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/qml
+-I
+/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/qml
+-I
+/home/programming-pc/Qt/6.7.3/gcc_64/qml
+--resource
+/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/ClusterContent/.qt/rcc/qmake_ClusterContent.qrc
+--resource
+/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/ClusterContent/.qt/rcc/ClusterContent_raw_qml_0.qrc
+/home/programming-pc/seame/cluster_dashboard/Cluster/ClusterContent/Screen01.ui.qml
+/home/programming-pc/seame/cluster_dashboard/Cluster/ClusterContent/App.qml

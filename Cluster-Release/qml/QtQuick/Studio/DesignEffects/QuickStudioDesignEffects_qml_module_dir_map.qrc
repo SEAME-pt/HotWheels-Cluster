@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt-project.org/imports/QtQuick/Studio/DesignEffects">/home/programming-pc/seame/cluster_dashboard/Cluster-Release/qml/QtQuick/Studio/DesignEffects</file>
+
+  </qresource>
+</RCC>

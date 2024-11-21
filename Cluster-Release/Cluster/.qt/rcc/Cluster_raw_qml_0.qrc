@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/qt/qml/Cluster/">
+    <file alias="EventListSimulator.qml">/home/programming-pc/seame/cluster_dashboard/Cluster/Cluster/EventListSimulator.qml</file>
+    <file alias="Constants.qml">/home/programming-pc/seame/cluster_dashboard/Cluster/Cluster/Constants.qml</file>
+    <file alias="EventListModel.qml">/home/programming-pc/seame/cluster_dashboard/Cluster/Cluster/EventListModel.qml</file>
+  </qresource>
+</RCC>
+
