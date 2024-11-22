@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/ClusterContent/">
-    <file alias="Screen01.ui.qml">/home/programming-pc/seame/cluster_dashboard/Cluster/ClusterContent/Screen01.ui.qml</file>
-    <file alias="App.qml">/home/programming-pc/seame/cluster_dashboard/Cluster/ClusterContent/App.qml</file>
-    <file alias="images/cluster.png">/home/programming-pc/seame/cluster_dashboard/Cluster/ClusterContent/images/cluster.png</file>
-  </qresource>
-</RCC>
-

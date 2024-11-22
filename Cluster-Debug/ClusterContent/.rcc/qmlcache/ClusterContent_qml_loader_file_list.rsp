@@ -1,6 +1,0 @@
---resource
-/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/ClusterContent/.qt/rcc/qmake_ClusterContent.qrc
---resource
-/home/programming-pc/seame/cluster_dashboard/Cluster-Debug/ClusterContent/.qt/rcc/ClusterContent_raw_qml_0.qrc
-/qt/qml/ClusterContent/Screen01.ui.qml
-/qt/qml/ClusterContent/App.qml

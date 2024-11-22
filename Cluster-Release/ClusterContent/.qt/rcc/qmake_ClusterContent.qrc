@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/ClusterContent">
-    <file alias="qmldir">/home/programming-pc/seame/cluster_dashboard/Cluster-Release/qml/ClusterContent/qmldir</file>
-  </qresource>
-</RCC>
-

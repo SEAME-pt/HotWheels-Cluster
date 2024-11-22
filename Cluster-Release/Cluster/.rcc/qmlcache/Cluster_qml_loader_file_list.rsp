@@ -1,7 +1,0 @@
---resource
-/home/programming-pc/seame/cluster_dashboard/Cluster-Release/Cluster/.qt/rcc/qmake_Cluster.qrc
---resource
-/home/programming-pc/seame/cluster_dashboard/Cluster-Release/Cluster/.qt/rcc/Cluster_raw_qml_0.qrc
-/qt/qml/Cluster/EventListSimulator.qml
-/qt/qml/Cluster/Constants.qml
-/qt/qml/Cluster/EventListModel.qml

@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/QtQuick/Studio/Utils">
-    <file alias="qmldir">/home/programming-pc/seame/cluster_dashboard/Cluster-Release/qml/QtQuick/Studio/Utils/qmldir</file>
-  </qresource>
-</RCC>
-

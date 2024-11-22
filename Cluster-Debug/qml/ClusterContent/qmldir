@@ -1,9 +1,0 @@
-module ClusterContent
-linktarget ClusterContentplugin
-optional plugin ClusterContentplugin
-classname ClusterContentPlugin
-typeinfo ClusterContent.qmltypes
-prefer :/qt/qml/ClusterContent/
-Screen01 1.0 Screen01.ui.qml
-App 1.0 App.qml
-

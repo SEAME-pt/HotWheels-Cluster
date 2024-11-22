@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/qt/qml/Cluster">/home/programming-pc/seame/cluster_dashboard/Cluster-Release/qml/Cluster</file>
-
-  </qresource>
-</RCC>
