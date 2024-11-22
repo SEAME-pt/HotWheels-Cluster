@@ -1,0 +1,9 @@
+/home/melo/teste/build/Desktop-Debug/CMakeFiles/teste.dir
+/home/melo/teste/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/melo/teste/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/melo/teste/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/melo/teste/build/Desktop-Debug/CMakeFiles/install.dir
+/home/melo/teste/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/melo/teste/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/melo/teste/build/Desktop-Debug/CMakeFiles/teste_autogen_timestamp_deps.dir
+/home/melo/teste/build/Desktop-Debug/CMakeFiles/teste_autogen.dir
