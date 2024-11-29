@@ -7,7 +7,7 @@ import threading
 class JetCar:
     def __init__(self, servo_addr=0x40, motor_addr=0x60):
         # Servo setup
-        self.servo_bus = smbus2.45(1)
+        self.servo_bus = smbus2.SMBus(1)
         self.SERVO_ADDR = servo_addr
         self.STEERING_CHANNEL = 0
         
