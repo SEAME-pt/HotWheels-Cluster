@@ -13,9 +13,9 @@ class JetCar:
         
         # Servo config
         self.MAX_ANGLE = 180
-        self.SERVO_CENTER_PWM = 307
-        self.SERVO_LEFT_PWM = 225
-        self.SERVO_RIGHT_PWM = 389
+        self.SERVO_CENTER_PWM = 330 + 0
+        self.SERVO_LEFT_PWM = 330 - 250
+        self.SERVO_RIGHT_PWM = 330 + 250
         
         # Motor controller setup
         self.motor_bus = smbus2.SMBus(1)
@@ -63,7 +63,7 @@ class JetCar:
             self.motor_bus.write_byte_data(self.MOTOR_ADDR, 0x00, 0x20)
             
             # Set frequency to 60Hz
-            prescale = int(math.floor(25000000.0 / 4096.0 / 60 - 1))
+            prescale = int(math.floor(25000000.0 / 4096.0 / 100 - 1))
             oldmode = self.motor_bus.read_byte_data(self.MOTOR_ADDR, 0x00)
             newmode = (oldmode & 0x7F) | 0x10
             self.motor_bus.write_byte_data(self.MOTOR_ADDR, 0x00, newmode)
@@ -242,3 +242,15 @@ class JetCar:
         self.set_steering(0)
         self.servo_bus.close()
         self.motor_bus.close()
+
+
+try:
+    car = JetCar()
+    car.start()
+    while car.running:
+        time.sleep(0.5)
+except Exception as e:
+    print(f"Gamepad error: {e}")
+    exit(1)
+    
+car.stop()
