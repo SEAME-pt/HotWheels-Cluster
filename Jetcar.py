@@ -198,21 +198,20 @@ class JetCar:
             try:
                 events = get_gamepad()
                 for event in events:
-                    #print(event.code)
                     if event.code == 'ABS_X':
-                        speed = int((-event.state / 32767) * 100)
                         current_angle = ((event.state - 127) / 127) * 100
-
-                      
-
-                        print(speed," ,",current_angle,",",event.state)
-                        
                         self.set_steering(current_angle)
-                        
-                    
-                        
-                    elif event.code == 'ABS_GAS':
-                        self.current_speed = event.state / 255.0 * 100
+                    elif event.code == 'ABS_RZ':
+                        # Map 0-255 to -100 to +100
+                        # 0-127 = reverse
+                        # 128 = stop
+                        # 129-255 = forward
+                        if event.state == 128:
+                            self.current_speed = 0
+                        elif event.state < 128:
+                            self.current_speed = (128 - event.state) / 128.0 * 100
+                        else:
+                            self.current_speed = -(event.state - 128) / 127.0 * 100
                         self.set_speed(self.current_speed)
                     elif event.code == 'ABS_BRAKE':
                         self.current_speed = -event.state / 255.0 * 100
@@ -250,7 +249,8 @@ try:
     while car.running:
         time.sleep(0.5)
 except Exception as e:
-    print(f"Gamepad error: {e}")
+    print(f"Error: {e}")
+    car.stop()
     exit(1)
     
 car.stop()
