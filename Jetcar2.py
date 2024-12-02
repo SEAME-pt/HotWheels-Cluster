@@ -6,8 +6,6 @@ import threading
 import Jetson.GPIO as GPIO
 from canvas import Canvas
 
-
-
 SENSOR_PIN = 17  # GPIO pin connected to the LM393 output 
 pulsos = 0
 ultimo_tempo = time.time()
