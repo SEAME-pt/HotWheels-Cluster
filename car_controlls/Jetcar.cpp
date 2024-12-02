@@ -53,6 +53,7 @@ T clamp(T value, T min_val, T max_val) {
 }
 /* ---------------------------------------------------- */
 
+Jetcar::Jetcar() {}
 Jetcar::Jetcar(int servo_addr = 0x40, int motor_addr = 0x60)
     : servo_addr_(servo_addr), motor_addr_(motor_addr), running_(false), current_speed_(0), current_angle_(0) {
 
