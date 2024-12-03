@@ -81,7 +81,7 @@ void    controllerLoop(SDL_Joystick* joystick) {
 
 int main() {
     try {
-        Jetcar car;
+        Jetcar car(0x40, 0x60);
         car.start();
 
         while (true) {
