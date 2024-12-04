@@ -15,9 +15,9 @@ class Jetcar {
     private:
         // Constants
         const int MAX_ANGLE = 180;
-        const int SERVO_CENTER_PWM = 330;
-        const int SERVO_LEFT_PWM = 330 - 200;
-        const int SERVO_RIGHT_PWM = 330 + 200;
+        const int SERVO_CENTER_PWM = 350;
+        const int SERVO_LEFT_PWM = 350 - 140;
+        const int SERVO_RIGHT_PWM = 350 + 140;
         const int STEERING_CHANNEL = 0;
 
         // I2C variables

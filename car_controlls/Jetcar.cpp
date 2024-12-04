@@ -95,23 +95,28 @@ void Jetcar::stop() {
 }
 
 void Jetcar::set_speed(int speed) {
+    //std::cout << "i'm here" << std::endl;
     speed = clamp(speed, -100, 100);
+    //std::cout << "Speed: " << speed << std::endl;
     int pwm_value = static_cast<int>(std::abs(speed) / 100.0 * 4095);
+    //std::cout << "pwd_value: " << pwm_value << std::endl;
 
-    if (speed > 0) { // Forward
+    if (speed < 0) { // Forward
+        std::cout << "Speed: " << speed << std::endl;
         set_motor_pwm(0, pwm_value);
         set_motor_pwm(1, 0);
         set_motor_pwm(2, pwm_value);
         set_motor_pwm(5, pwm_value);
         set_motor_pwm(6, 0);
         set_motor_pwm(7, pwm_value);
-    } else if (speed < 0) { // Backward
+    } else if (speed > 0) { // Backward
+        std::cout << "Speed: " << speed << std::endl;
         set_motor_pwm(0, pwm_value);
         set_motor_pwm(1, pwm_value);
         set_motor_pwm(2, 0);
-        set_motor_pwm(5, pwm_value);
         set_motor_pwm(6, pwm_value);
-        set_motor_pwm(7, 0);
+        set_motor_pwm(7, pwm_value);
+        set_motor_pwm(8, 0);
     } else { // Stop
         for (int channel = 0; channel < 9; ++channel)
             set_motor_pwm(channel, 0);
@@ -176,6 +181,7 @@ void Jetcar::set_servo_pwm(int channel, int on_value, int off_value) {
 
 void Jetcar::set_motor_pwm(int channel, int value) {
     value = clamp(value, 0, 4095);
+    std::cout << "value: " << value << std::endl;
     int base_reg = 0x06 + (4 * channel);
     write_byte_data(motor_bus_fd_, base_reg, value & 0xFF);
     write_byte_data(motor_bus_fd_, base_reg + 1, value >> 8);
@@ -209,12 +215,39 @@ void Jetcar::process_joystick() {
     }
 
     while (running_) {
-        SDL_JoystickUpdate();
-        int x_axis = SDL_JoystickGetAxis(joystick, 0); // Steering
-        int y_axis = SDL_JoystickGetAxis(joystick, 2); // Speed
+        //this is just to test if the controller is recognized
+        /* SDL_Event e;
+        int num_buttons = SDL_JoystickNumButtons(joystick);
+        while (SDL_PollEvent(&e) != 0) {
+            if (e.type == SDL_QUIT) {
+                running_ = false;
+            }
+            // Handle joystick button press event
+            if (e.type == SDL_JOYBUTTONDOWN) {
+                std::cout << "Button " << (int)e.jbutton.button << " Pressed!" << std::endl;
+            }
+            // Handle joystick axis motion event
+            if (e.type == SDL_JOYAXISMOTION) {
+                if ((int)e.jaxis.axis == 0)
+                    std::cout << "Car direction" << " moved to position " << e.jaxis.value << std::endl;
+                if ((int)e.jaxis.axis == 3)
+                    std::cout << "Throttle" << " moved to position " << e.jaxis.value << std::endl;
+            }
+            for (int i = 0; i < SDL_JoystickNumButtons(joystick); ++i) {
+                if (SDL_JoystickGetButton(joystick, i)) {
+                    printf("Button %d is pressed\n", i);
+                }
+            }
+        } */
 
-        set_steering(x_axis / 32767.0 * MAX_ANGLE);
-        set_speed(y_axis / 32767.0 * 100);
+        SDL_JoystickUpdate();
+        //button 8 is L2
+        //button 9 is R2
+        int left_joystick_x = SDL_JoystickGetAxis(joystick, 0); // Steering
+        int right_joystick_y = SDL_JoystickGetAxis(joystick, 3); // Speed
+
+        set_steering(left_joystick_x / 32767.0 * MAX_ANGLE);
+        set_speed(right_joystick_y / 32767.0 * 100);
 
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }
