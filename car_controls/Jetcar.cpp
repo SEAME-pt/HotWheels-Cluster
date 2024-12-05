@@ -8,13 +8,6 @@ union i2c_smbus_data {
     uint8_t block[34]; // Block size for SMBus
 };
 
-/* struct i2c_smbus_ioctl_data {
-    uint8_t read_write;
-    uint8_t command;
-    int size;
-    union i2c_smbus_data *data;
-}; */
-
 #define I2C_SMBUS_WRITE 0
 #define I2C_SMBUS_READ  1
 #define I2C_SMBUS_BYTE_DATA 2
@@ -95,14 +88,10 @@ void Jetcar::stop() {
 }
 
 void Jetcar::set_speed(int speed) {
-    //std::cout << "i'm here" << std::endl;
     speed = clamp(speed, -100, 100);
-    //std::cout << "Speed: " << speed << std::endl;
     int pwm_value = static_cast<int>(std::abs(speed) / 100.0 * 2048);
-    //std::cout << "pwd_value: " << pwm_value << std::endl;
 
     if (speed > 0) { // Forward
-        //std::cout << "Speed: " << speed << std::endl;
         set_motor_pwm(0, pwm_value);
         set_motor_pwm(1, 0);
         set_motor_pwm(2, pwm_value);
@@ -110,7 +99,6 @@ void Jetcar::set_speed(int speed) {
         set_motor_pwm(6, 0);
         set_motor_pwm(7, pwm_value);
     } else if (speed < 0) { // Backward
-        //std::cout << "Speed: " << speed << std::endl;
         set_motor_pwm(0, pwm_value);
         set_motor_pwm(1, pwm_value);
         set_motor_pwm(2, 0);
@@ -181,7 +169,6 @@ void Jetcar::set_servo_pwm(int channel, int on_value, int off_value) {
 
 void Jetcar::set_motor_pwm(int channel, int value) {
     value = clamp(value, 0, 2048);
-    //std::cout << "value: " << value << std::endl;
     int base_reg = 0x06 + (4 * channel);
     write_byte_data(motor_bus_fd_, base_reg, value & 0xFF);
     write_byte_data(motor_bus_fd_, base_reg + 1, value >> 8);
