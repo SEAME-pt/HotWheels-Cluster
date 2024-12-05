@@ -209,9 +209,10 @@ void Jetcar::process_joystick() {
 
     SDL_Joystick* joystick = SDL_JoystickOpen(0);
     if (!joystick) {
-            std::cerr << "Failed to open joystick: " << SDL_GetError() << std::endl;
+        /* std::cerr << "Failed to open joystick: " << SDL_GetError() << std::endl;
         SDL_Quit();
-        return;
+        return; */
+        process_joystick();
     }
 
     while (running_) {
