@@ -2,7 +2,10 @@
 #include <SDL2/SDL.h>
 #include <thread>
 #include <atomic>
+#include <csignal>
 #include "Jetcar.hpp"
+
+volatile bool keepRunning = true;
 
 // Global atomic flag to signal the event thread to stop
 /* std::atomic<bool> running(true);
@@ -79,18 +82,26 @@ void    controllerLoop(SDL_Joystick* joystick) {
     return 0;
 } */
 
+// Signal handler function
+void signalHandler(int signum) {
+    std::cout << "Signal (" << signum << ") received. Stopping gracefully..." << std::endl;
+    keepRunning = false;
+}
+
 int main() {
+    signal(SIGTERM, signalHandler);
+    signal(SIGINT, signalHandler);
     try {
         Jetcar car(0x40, 0x60);
         car.start();
-
-        while (true) {
+        while (keepRunning) {
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
+        car.stop();
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
-
+    std::cout << "Service has stopped." << std::endl;
     return 0;
 }
