@@ -89,22 +89,26 @@ void Jetcar::stop() {
 
 void Jetcar::set_speed(int speed) {
     speed = clamp(speed, -100, 100);
-    int pwm_value = static_cast<int>(std::abs(speed) / 100.0 * 2048);
+    int pwm_value = static_cast<int>(std::abs(speed) / 100.0 * 4096);
 
-    if (speed > 0) { // Forward
-        set_motor_pwm(0, pwm_value);
-        set_motor_pwm(1, 0);
-        set_motor_pwm(2, pwm_value);
-        set_motor_pwm(5, pwm_value);
-        set_motor_pwm(6, 0);
-        set_motor_pwm(7, pwm_value);
-    } else if (speed < 0) { // Backward
+    if (speed < 0) { // Backward
+        //left motor
         set_motor_pwm(0, pwm_value);
         set_motor_pwm(1, pwm_value);
         set_motor_pwm(2, 0);
+        //right motor
         set_motor_pwm(6, pwm_value);
         set_motor_pwm(7, pwm_value);
         set_motor_pwm(8, 0);
+    } else if (speed > 0) { // Forward
+        //left motor
+        set_motor_pwm(0, pwm_value);
+        set_motor_pwm(1, 0);
+        set_motor_pwm(2, pwm_value);
+        //right motor
+        set_motor_pwm(5, pwm_value);
+        set_motor_pwm(6, 0);
+        set_motor_pwm(7, pwm_value);
     } else { // Stop
         for (int channel = 0; channel < 9; ++channel)
             set_motor_pwm(channel, 0);
@@ -168,7 +172,7 @@ void Jetcar::set_servo_pwm(int channel, int on_value, int off_value) {
 }
 
 void Jetcar::set_motor_pwm(int channel, int value) {
-    value = clamp(value, 0, 2048);
+    value = clamp(value, 0, 4096);
     int base_reg = 0x06 + (4 * channel);
     write_byte_data(motor_bus_fd_, base_reg, value & 0xFF);
     write_byte_data(motor_bus_fd_, base_reg + 1, value >> 8);
