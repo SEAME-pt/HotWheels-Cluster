@@ -101,7 +101,7 @@ void Jetcar::set_speed(int speed) {
     int pwm_value = static_cast<int>(std::abs(speed) / 100.0 * 2048);
     //std::cout << "pwd_value: " << pwm_value << std::endl;
 
-    if (speed < 0) { // Forward
+    if (speed > 0) { // Forward
         //std::cout << "Speed: " << speed << std::endl;
         set_motor_pwm(0, pwm_value);
         set_motor_pwm(1, 0);
@@ -109,7 +109,7 @@ void Jetcar::set_speed(int speed) {
         set_motor_pwm(5, pwm_value);
         set_motor_pwm(6, 0);
         set_motor_pwm(7, pwm_value);
-    } else if (speed > 0) { // Backward
+    } else if (speed < 0) { // Backward
         //std::cout << "Speed: " << speed << std::endl;
         set_motor_pwm(0, pwm_value);
         set_motor_pwm(1, pwm_value);
